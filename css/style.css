@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+}
+.image {
+    margin: 0;
+    margin-top: 3em;
+    width: 600px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../img/jezioro.jpg);
+    background-position: center;
+}
+figcaption {
+    width: 610px;
+    margin-left: -5px;
+    margin-right: -5px;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+.image::before,
+figure::before,
+.image::after,
+figure::after {
+    content: "";
+    height: 10px;
+    width: 303px;
+    position: absolute;
+    transition: all 1.5s ease;
+    opacity: 0;
+}
+.image::before {
+    top: -5px;
+    left: -5px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+}
+figure::before {
+    bottom: -5px;
+    left: -5px;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.image::after {
+    top: -5px;
+    right: -5px;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+ }
+figure::after {
+    bottom: -5px;
+    right: -5px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+figure:hover::after,
+figure:hover::before,
+.image:hover::before,
+.image:hover::after {
+    opacity: 1;
+    height: 178px;
+}
+figure:hover figcaption {
+    opacity: 1;
+    font-size: 3em;
+}
